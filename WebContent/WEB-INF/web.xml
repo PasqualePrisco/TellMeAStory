@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>storytelling</display-name>
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+  <resource-ref>
+    <description>JNDI reference to a data source</description>
+    <res-ref-name>jdbc/storyDS</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  <servlet>
+    <servlet-name>Register</servlet-name>
+    <servlet-class>servlet.Register</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Register</servlet-name>
+    <url-pattern>/register</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Log</servlet-name>
+    <servlet-class>servlet.Log</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Log</servlet-name>
+    <url-pattern>/log</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AddAlbum</servlet-name>
+    <servlet-class>servlet.AddAlbum</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddAlbum</servlet-name>
+    <url-pattern>/addAlbum</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <servlet-name>PazienteControl</servlet-name>
+    <servlet-class>servlet.PazienteControl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PazienteControl</servlet-name>
+    <url-pattern>/pazienteC</url-pattern>
+  </servlet-mapping>
+  
+  
+   <servlet>
+    <servlet-name>ForgotPassword</servlet-name>
+    <servlet-class>forgot.ForgotPassword</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ForgotPassword</servlet-name>
+    <url-pattern>/fp</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <servlet-name>VerifyRegisteredEmailHash</servlet-name>
+    <servlet-class>forgot.VerifyRegisteredEmailHash</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>VerifyRegisteredEmailHash</servlet-name>
+    <url-pattern>/verify</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <servlet-name>ChangePassword</servlet-name>
+    <servlet-class>forgot.ChangePassword</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ChangePassword</servlet-name>
+    <url-pattern>/cp</url-pattern>
+  </servlet-mapping>
+</web-app>
